@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class GameTests {
     @Test
     void testDefaultGame() {
-        RestAssured.baseURI = "http://localhost:8080/game";
+        RestAssured.baseURI = "http://localhost:8080";
         Response response = given().when().get("/game").then().extract().response();
         assertEquals(200, response.getStatusCode());
         assertEquals("Playing Sudoku is fun!", response.jsonPath().getString("text"));
